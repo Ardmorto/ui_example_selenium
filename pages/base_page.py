@@ -1,4 +1,5 @@
 from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 class BasePage:
@@ -18,4 +19,8 @@ class BasePage:
         return self.driver.find_element(*locator)
 
     def find_all(self, locator):
-        return self.driver.find_element(*locator)
+        return self.driver.find_elements(*locator)
+
+    def wait_until_page_load(self):
+        wait = WebDriverWait(self.driver, 5)
+        wait.until(lambda driver: driver.execute_script("return document.readyState") == "complete")
