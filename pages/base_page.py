@@ -13,3 +13,9 @@ class BasePage:
             self.driver.get(f'{self.BASE_URL}{self.PAGE_URL}')
         else:
             raise NotImplementedError('Unable to open the page')
+
+    def find(self, locator):
+        return self.driver.find_element(*locator)
+
+    def find_all(self, locator):
+        return self.driver.find_element(*locator)

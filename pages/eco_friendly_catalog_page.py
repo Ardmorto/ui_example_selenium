@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from locators import ef_catalog_locators
+from locators import ef_catalog_locators as loc
 
 
 class EFCatalogPage(BasePage):
