@@ -6,7 +6,7 @@ def test_number_of_displayed_items(ef_catalog_page):
     ef_catalog_page.open_page()
     ef_catalog_page.check_products_count(12)
 
-def test_scending_price_sorting(ef_catalog_page):
+def test_ascending_price_sorting(ef_catalog_page):
     ef_catalog_page.open_page()
     ef_catalog_page.click_sort_button()
     ef_catalog_page.select_price_sort()

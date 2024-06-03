@@ -5,11 +5,12 @@ from pages.eco_friendly_catalog_page import EFCatalogPage
 from pages.sale_page import SalePage
 from pages.profile_page import ProfilePage
 
-@pytest.fixture()
+@pytest.fixture(scope="function")
 def driver():
     driver = webdriver.Chrome()
+    driver.implicitly_wait(5)
     yield driver
-    driver.quit()
+    driver.close()
 
 @pytest.fixture()
 def create_acc_page(driver):
